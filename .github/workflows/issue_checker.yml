@@ -38,6 +38,8 @@ jobs:
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
 
+      - run: echo ${{ github.event.issue.user.login }}
+
       - name: Check Answer
         run: python main.py
 
