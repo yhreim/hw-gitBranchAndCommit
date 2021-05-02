@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 username = ''
 
 def hw1():
-    response = requests.get('ttps://raw.githubusercontent.com/{hw-gitBranchAndCommit}//theLooooooooooongestBranch/1plus1.txt')
+    response = requests.get('ttps://raw.githubusercontent.com/{}/hw-gitBranchAndCommit/theLooooooooooongestBranch/1plus1.txt')
     sys.exit(0 if '1+1=2' in response.text.strip().replace(' ', '') else -1)
 
 methods = [hw1]
