@@ -16,6 +16,6 @@ def hw1():
 
 methods = [hw1]
 if __name__ == '__main__':
-    hw_index = re.findall(r'I finished homework: `1`', sys.argv[1])[0]
+    hw_index = int(re.findall(r'I finished homework: `(.*?)`', sys.argv[1])[0])
     username = re.findall(r'`https://github.com/(.*?)/hw-gitBranchAndCommit`', sys.argv[1])[0]
     methods[hw_index - 1]()
