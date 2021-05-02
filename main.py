@@ -18,6 +18,8 @@ methods = [hw1]
 if __name__ == '__main__':
     f = open('in.txt', 'r', encoding='utf-8')
     argv = f.read()
+    print(argv)
+    print(re.findall(r'I finished homework: `(.*?)`', argv))
     hw_index = int(re.findall(r'I finished homework: `(.*?)`', argv)[0])
     username = re.findall(r'`https://github.com/(.*?)/hw-gitBranchAndCommit`', argv)[0]
     methods[hw_index - 1]()

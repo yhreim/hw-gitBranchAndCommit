@@ -33,10 +33,13 @@ jobs:
             Action running: https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}
             If there is not a accepted-comment and issue-close event later, something in your homework may be wrong.
 
+      - run: 'echo "$ISSUE_BODY" > in.txt'
+        shell: bash
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+
       - name: Check Answer
-        run: |
-          echo "${{ github.event.issue.body }}" > in.txt
-          python main.py
+        run: python main.py
 
       - name: Close Issue
         uses: peter-evans/close-issue@v1
