@@ -82,7 +82,33 @@ OK，现在你完成了 hw1，你现在需要对母仓库提交一个 issue 来�
    ```
 4.  你也可以使用 JetBrains IDE 中的 "VCS (Version Control System)" 来查看上述的历史，并选中某个或某些 commit 用 Ctrl+D 来查看这 commit 变更的文件内容 
 ![](img/pic1.png)
-5. 现在需要回到到最近没有 Bug 的版本。请使用 `某个 git 命令` 将 HEAD 指针回退到一个正常没有 Bug 的 Commit 节点
+5. 现在需要回滚到最近的没有 Bug 的版本。请使用 `某个 git 命令` 将 HEAD 指针回退到一个正常没有 Bug 的 Commit 节点，即使得 Git Commit 历史变成如下：
+   ```
+    commit 82634fcfe8eb7412063d8b62da6ea705da50c0d7
+    Author: Teng Zhang <zhangt2333@gmail.com>
+    Date:   Mon May 3 01:05:31 2021 +0800
+    
+        bugfix: '1+2=4'
+    
+    commit 096e01471ad4567c4bbe0b9f43fc2e71ba42d21c
+    Author: Teng Zhang <zhangt2333@gmail.com>
+    Date:   Mon May 3 01:04:46 2021 +0800
+    
+        bugfix: '1+1=3', but cause anthor bug
+    
+    commit ba5de0f6446c8c62d19187ae78fb8cc738036a13
+    Author: Teng Zhang <zhangt2333@gmail.com>
+    Date:   Mon May 3 01:03:49 2021 +0800
+    
+        init 1plus1.txt
+    
+    commit 94e50c9c3320c52dcd58929eff536581005efd04
+    Author: Teng Zhang <zhangt2333@gmail.com>
+    Date:   Fri Apr 30 11:08:29 2021 +0800
+    
+        Initial commit
+    (END)
+   ```
 6. 回退之后，将当前分支使用 `git push` push 到你的 Repo 试试，看看会不会报错
 7. 报错是正常的，因为你的 Repo 本地的当前分支 (usedForRollback) 和远端分支并不是父子关系，此时如果想要回退远端的 commit，就只能使用 `git push --force` 来强制 push。请记住：
     * ！永远不要在公共 Branch 上使用 force push
