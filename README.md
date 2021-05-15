@@ -115,4 +115,4 @@ OK，现在你完成了 hw1，你现在需要对母仓库提交一个 issue 来�
     * ！永远不要在和别人共享的 Branch 上使用 force push
     * ！你可以在你自己独有的 Branch 上使用 force push，但请知道为什么非得用 force
     
-OK，现在你完成了 hw1，你现在需要对母仓库提交一个 issue 来检验你的 Repo 是否正确，issue 模板请选择 "Submit hw2"
+OK，现在你完成了 hw2，你现在需要对母仓库提交一个 issue 来检验你的 Repo 是否正确，issue 模板请选择 "Submit hw2"
